@@ -36,6 +36,7 @@ shell:  ## Start an interactive container with workspace mounted
 	  bash
 
 # Config
-ARROW_VERSIONS := 17.0.0 19.0.1 19.0.1.1 20.0.0
+#ARROW_VERSIONS := 17.0.0 18.1.0.1 18.1.0 19.0.1 19.0.1.1 20.0.0
+ARROW_VERSIONS :=  17.0.0 18.1.0.1 18.1.0
 MEMORY := 16g
 IMAGE_PREFIX := arrowtest
