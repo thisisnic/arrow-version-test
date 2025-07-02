@@ -28,7 +28,14 @@ clean:  ## Delete Docker images for all versions
 	  docker rmi -f $(IMAGE_PREFIX):$$v || true ; \
 	done
 
+shell:  ## Start an interactive container with workspace mounted
+	docker run -it --rm \
+	  -v "$$PWD":/workspace -w /workspace \
+	  --memory=$(MEMORY) --memory-swap=$(MEMORY) \
+	  $(IMAGE_PREFIX):$(VERSION) \
+	  bash
+
 # Config
-ARROW_VERSIONS := 19.0.1.1 20.0.0
+ARROW_VERSIONS := 17.0.0 19.0.1 19.0.1.1 20.0.0
 MEMORY := 16g
 IMAGE_PREFIX := arrowtest
